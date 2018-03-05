@@ -13,9 +13,19 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf.urls import include
+from sportsday import views
 
 urlpatterns = [
+    url(r'^$', views.home_page, name='home_page'),
+    url(r'^activities/$', views.activities, name='activities'),
+    url(r'^matches/$', views.matches, name='matches'),
+    url(r'^register/$', views.register, name='register'),
+    url(r'^messages/$', views.messages, name='messages'),
+    url(r'^contact/$', views.activities, name='contact'),
     url(r'^admin/', admin.site.urls),
 ]
