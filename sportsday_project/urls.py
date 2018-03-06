@@ -22,10 +22,10 @@ from sportsday import views
 
 urlpatterns = [
     url(r'^$', views.home_page, name='home_page'),
-    url(r'^activities/$', views.activities, name='activities'),
-    url(r'^matches/$', views.matches, name='matches'),
-    url(r'^register/$', views.register, name='register'),
-    url(r'^messages/$', views.messages, name='messages'),
-    url(r'^contact/$', views.activities, name='contact'),
+    url(r'^sportsday/activities/$', views.activities, name='activities'),
+    url(r'^sportsday/matches/$', views.matches, name='matches'),
+    url(r'^sportsday/register/$', views.register, name='register'),
+    url(r'^sportsday/messages/$', views.messages, name='messages'),
+    url(r'^sportsday/contact/$', views.contact, name='contact'),
     url(r'^admin/', admin.site.urls),
 ]
