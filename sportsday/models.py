@@ -71,7 +71,7 @@ class Message(models.Model):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
-    website = models.URLField(blank=True)
+    password = models.CharField(default="password", max_length=128)
     picture = models.ImageField(upload_to='profile_images', blank=True)
 
     def __str__(self):
