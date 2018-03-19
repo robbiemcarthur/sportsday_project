@@ -1,6 +1,5 @@
 from django.contrib import admin
-from sportsday.models import UserProfile, Activity, Match
+from sportsday.models import Activity, Match
 
-admin.site.register(UserProfile)
 admin.site.register(Activity)
 admin.site.register(Match)
