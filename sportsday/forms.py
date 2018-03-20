@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+from django import forms
+from django.contrib.auth.models import User
+from sportsday.models import UserProfile
+
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password')
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ('picture')
+=======
 from django import forms
 from django.contrib.auth.models import User
 from sportsday.models import Page, Category, UserProfile
@@ -58,3 +75,4 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('website', 'picture')
+>>>>>>> da5009b8f115e4f0e4b15b8bcefdb7d2df218d81
