@@ -1,22 +1,28 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.core.validators import MinValueValidator, MaxValueValidator
+
 
 class Activity(models.Model):
-    number = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=128, unique=True)
-    location = models.CharField(max_length=128, null=False)
-    num_players = models.IntegerField(null=False, validators=[MinValueValidator(0), MaxValueValidator(5)])
+    likes = models.IntegerField(default=0)
+    views = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.number
+        return self.name
+
+
 class Match(models.Model):
-    match_id = models.IntegerField(primary_key=True)
-    comment = models.CharField(max_length=128)
     activity = models.ForeignKey(Activity)
+    postcode = models.CharField(max_length=128)
+    url = models.URLField()
+    ability = models.CharField(max_length=128)
+    available_day = models.CharField(max_length=128)
+    available_time = models.CharField(max_length=128)
+    players = models.IntegerField(default=0)
+    views = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.comment
+        return self.postcode
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
