@@ -22,7 +22,7 @@ class Match(models.Model):
     views = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.location
+        return self.postcode
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
