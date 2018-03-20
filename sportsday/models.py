@@ -17,9 +17,8 @@ class Match(models.Model):
     url = models.URLField()
     ability = models.CharField(max_length=128)
     available_day = models.CharField(max_length=128)
-    available_time = models.CharField(default=0)
+    available_time = models.CharField(max_length=128)
     players = models.IntegerField(default=0)
-    match_number = models.IntegerField(default=0)
     views = models.IntegerField(default=0)
 
     def __str__(self):
