@@ -1,31 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Activities</title>
-</head>
-<body>
-<h1>Activities</h1>
-        <div>
-            <br /> <strong>{{ boldmessage }}</strong><br />
+{% extends 'sportsday/base.html' %}
+{% load staticfiles %}
+
+{% block body_block %}
+      <div class="row mb-2 align-center">
+        <div class="col-md-12" align="center">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-info">Available Activities</strong>
+            </div>
         </div>
-        <div>
-            <a href="/">Home</a><br />
-        </div>
-         <div>
-            <a href="/sportsday/activities">Activities</a><br />
-        </div>
-        <div>
-            <a href="/sportsday/matches">View Matches</a><br />
-        </div>
-                <div>
-            <a href="/sportsday/register">Register</a><br />
-        </div>
-        <div>
-            <a href="/sportsday/messages">Messages</a><br />
-        </div>
-        <div>
-            <a href="/sportsday/contact">Contact Us</a><br />
-        </div>
-</body>
-</html>
+      </div>
+    </div>
+{% endblock %}
