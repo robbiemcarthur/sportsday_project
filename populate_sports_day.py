@@ -204,12 +204,12 @@ def populate():
          "views": 12}
     ]
 
-    acts = {"Hiking": {"activities": hiking_matches, "views": 754, "likes" : 432},
-            "Tennis": {"activities": tennis_matches, "views": 853, "likes" : 643},
-            "Golf": {"activities": golf_matches, "views": 765, "likes" : 532},
-            "Boxing": {"activities": boxing_matches, "views": 231, "likes" : 132},
-            "Badminton": {"activities": badminton_matches, "views": 425, "likes" : 212},
-            "Table Tennis": {"activities": table_tennis_matches, "views": 542, "likes" : 216},
+    acts = {"Hiking": {"activities": hiking_matches, "views": 754, "likes": 432},
+            "Tennis": {"activities": tennis_matches, "views": 853, "likes": 643},
+            "Golf": {"activities": golf_matches, "views": 765, "likes": 532},
+            "Boxing": {"activities": boxing_matches, "views": 231, "likes": 132},
+            "Badminton": {"activities": badminton_matches, "views": 425, "likes": 212},
+            "Table Tennis": {"activities": table_tennis_matches, "views": 542, "likes": 216},
             "Squash": {"activities": squash_matches, "views": 345, "likes": 122},
             "Rock Climbing": {"activities": rockclimbing_matches, "views": 321, "likes": 123},
             "Running": {"activities": running_matches, "views": 1242, "likes": 978}}
