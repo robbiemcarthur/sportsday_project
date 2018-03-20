@@ -13,10 +13,21 @@ class Activity(models.Model):
 
 class Match(models.Model):
     activity = models.ForeignKey(Activity)
-    location = models.CharField(max_length=128)
+    postcode = models.CharField(max_length=128)
     url = models.URLField()
-    match_number = models.IntegerField(default=0)
+    ability = models.CharField(max_length=128)
+    available_day = models.CharField(max_length=128)
+    available_time = models.CharField(max_length=128)
+    players = models.IntegerField(default=0)
     views = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.location
+        return self.postcode
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
+    password = models.CharField(default="password", max_length=128)
+    picture = models.ImageField(upload_to='profile_images', blank=True)
+
+    def __str__(self):
+        return self.user.username
