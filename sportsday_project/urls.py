@@ -27,5 +27,7 @@ urlpatterns = [
     url(r'^sportsday/register/$', views.register, name='register'),
     url(r'^sportsday/messages/$', views.messages, name='messages'),
     url(r'^sportsday/contact/$', views.contact, name='contact'),
+    url(r'^sportsday/login/$', views.user_login, name='login'),
+    url(r'^restricted/', views.restricted, name='restricted'),
     url(r'^admin/', admin.site.urls),
 ]

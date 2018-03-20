@@ -1,60 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
+{% load rango_template_tags %}
 {% load staticfiles %}
-<html lang="en">
-  <head>
-      <title>
-            Sportsday - 
-            {% block title_block %}
-                Find your sporting match on Sportsday!
-            {% endblock %}
-         </title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Blog Template for Bootstrap</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-    <link href="blog.css" rel="stylesheet">
-  </head>
-
-  <body class="bg-info text-white">
-
-    <div class="container">
-      <header class="blog-header py-3">
-        <div class="row flex-nowrap justify-content-between align-items-center">
-          <div class="col-4 pt-1">
-            <a class="text-muted" href="#"></a>
-          </div>
-          <div class="col-4 text-center">
-            <a class="blog-header-logo text-dark" href="#">Sports Day</a>
-          </div>
-          <div class="col-4 d-flex justify-content-end align-items-center">
-            
-            
-          </div>
-        </div>
-      </header>
-
-      <div class="nav-scroller py-1 mb-2">
-        <nav class="nav d-flex justify-content-between">
-          <a class="p-2 text-white" href="{% url 'home_page' %}">Home</a>
-          <a class="p-2 text-white" href="{% url 'activities' %}">Activities</a>
-          <a class="p-2 text-white" href="{% url 'matches' %}">View Matches</a>
-          <a class="p-2 text-white" href="{% url 'register' %}">Register</a>
-          <a class="p-2 text-white" href="{% url 'messages' %}">Messages</a>
-          <a class="p-2 text-white" href="{% url 'contact' %}">Contact Us</a>
-        </nav>
-      </div>
-      <div>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8" />
+        <title>
+           Sports Matchmaker -</title>
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     </head>      
+     <body>
+         <div class="container" align="center">
+           <header class="blog-header py-3">
+             <div class="span4">
+               <!-- <a class="blog-header-logo text-dark">Sports Matchmaker</a> -->
+               <img class="center-block" src="multisports_banner.jpg"/>
+             </div>
+           </header>
+           <div class="nav-scroller py-1 mb-2">
+             <nav class="nav d-flex justify-content-between">
+               <a class="p-2 text-muted" href="#">Home</a>
+               <a class="p-2 text-muted" href="#">Activities</a>
+               <a class="p-2 text-muted" href="#">View matches</a>
+               <a class="p-2 text-muted" href="#">Register</a>
+               <a class="p-2 text-muted" href="#">Login</a>
+               <a class="p-2 text-muted" href="#">Messages</a>
+               <a class="p-2 text-muted" href="#">Contact us</a>
+             </nav>
+           </div>
+         </div>
+         <div>
             {% block body_block %}
             {% endblock %}
-        </div>
-  </body>
+         </div>
+      </body>
 </html>
+          
