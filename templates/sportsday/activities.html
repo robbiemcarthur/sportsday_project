@@ -2,11 +2,63 @@
 {% load staticfiles %}
 
 {% block body_block %}
-      <div class="row mb-2 align-center">
+<div class="row mb-2 align-center">
         <div class="col-md-12" align="center">
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
-              <strong class="d-inline-block mb-2 text-info">Available Activities</strong>
+              <strong class="d-inline-block mb-2 text-info">Select Activity</strong>
+              <div>
+              <form class="form-inline">
+  		<select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+    			<option selected>Choose Activity</option>
+    			<option value="hiking">Hiking</option>
+    			<option value="tennis">Tennis</option>
+    			<option value="golf">Golf</option>
+			<option value="boxing">Boxing</option>
+			<option value="badminton">Badminton</option>
+			<option value="squash">Squash</option>
+			<option value="running">Running</option>
+                        <option value="table">Table Tennis</option>
+  		</select>
+              </div>
+ 	      <div class="mt-2">
+  		<select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+    			<option selected>Ability Level</option>
+    			<option value="N">Novice</option>
+    			<option value="I">Intermediate</option>
+    			<option value="A">Advanced</option>
+  		</select>
+              </div>
+	      <div class="mt-2">
+  		<select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+    			<option selected>Day Available</option>
+    			<option value="mon">Monday</option>
+    			<option value="tue">Tuesday</option>
+    			<option value="wed">Wednesday</option>
+                        <option value="thu">Thursday</option>
+    			<option value="fri">Friday</option>
+    			<option value="sat">Saturday</option>
+                        <option value="sun">Sunday</option>
+  		</select>
+               </div>
+	       <div class="mt-2">
+  		<select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+    			<option selected>Time Available</option>
+    			<option value="1">0600 - 0900</option>
+    			<option value="2">0900 - 1200</option>
+    			<option value="3">1200 - 1500</option>
+                        <option value="4">1500 - 1800</option>
+    			<option value="5">1800 - 2100</option>
+    			<option value="6">2100 - 0000</option>
+                        <option value="7">0000 - 0300</option>
+                        <option value="8">0300 - 0600</option>
+  		</select>
+               </div>
+               <div class="mt-2">
+                <button type="submit" class="btn btn-primary">Submit</button>               
+	      </form>
+              </div>
+             </div>
             </div>
         </div>
       </div>
