@@ -9,8 +9,7 @@ from sportsday.models import Activity, Match
 
 
 def populate():
-
-    football_matches = [
+    hiking_matches = [
         {"location": "G81 2XT",
          "url": "https://www.goalsfootball.co.uk/clubs/scotland/glasgow-west/",
          "views": 123}]
@@ -40,7 +39,7 @@ def populate():
          "url": "https://www.glasgowlife.org.uk/sport/table-tennis/pages/default.aspx",
          "views": 123}]
 
-    acts = {"Football": {"activities": football_matches, "views" : 128, "likes" : 64},
+    acts = {"Hiking": {"activities": hiking_matches, "views" : 128, "likes" : 64},
             "Tennis": {"activities": tennis_matches, "views" : 128, "likes" : 64},
             "Golf": {"activities": golf_matches, "views" : 128, "likes" : 64},
             "Boxing": {"activities": boxing_matches, "views" : 128, "likes" : 64},

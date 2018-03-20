@@ -13,8 +13,12 @@ class Activity(models.Model):
 
 class Match(models.Model):
     activity = models.ForeignKey(Activity)
-    location = models.CharField(max_length=128)
+    postcode = models.CharField(max_length=128)
     url = models.URLField()
+    ability = models.CharField(max_length=128)
+    available_day = models.CharField(max_length=128)
+    available_time = models.CharField(default=0)
+    players = models.IntegerField(default=0)
     match_number = models.IntegerField(default=0)
     views = models.IntegerField(default=0)
 
