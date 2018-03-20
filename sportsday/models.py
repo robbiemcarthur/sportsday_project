@@ -20,3 +20,11 @@ class Match(models.Model):
 
     def __str__(self):
         return self.location
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
+    password = models.CharField(default="password", max_length=128)
+    picture = models.ImageField(upload_to='profile_images', blank=True)
+
+    def __str__(self):
+        return self.user.username
