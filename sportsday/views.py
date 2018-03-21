@@ -17,6 +17,20 @@ def activities(request):
     context_dict = {'activities': activity_list}
     return render(request, 'sportsday/activities.html', context_dict)
 
+@login_required()
+def like_activity(request):
+    act_id = None
+    if request.method == 'GET':
+        act_id = request.GET['activity_id']
+    likes = 0
+    if act_id:
+        act = Activity.objects.get(id=int(act_id))
+        if act:
+            likes = act.likes + 1
+            act.likes = likes
+            act.save()
+    return HttpResponse(likes)
+
 
 def matches(request):
     match_list = Match.objects.all()

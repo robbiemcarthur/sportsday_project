@@ -20,13 +20,15 @@
     {% if activities %}
     {% for activities in activities %}
             <li><strong>{{ activities.name }}</strong></li>
-    <div>
+        <div>
         <strong id="like_count">{{ activities.likes }}</strong> people like this activity
-        <button id = "likes" data-actid="{{activity.id}}"
+        {% if user.is_authenticated %}
+            <button id = "likes" data-actid="{{activity.id}}"
                 class="btn btn-primary btn-sm" type="button">
-            Like
-        </button>
-    </div>
+                Like
+            </button>
+            {% endif %}
+        </div>
     {% endfor %}
     {% else %}
     Activity does not exist!

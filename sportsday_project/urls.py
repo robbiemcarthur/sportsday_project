@@ -23,6 +23,7 @@ from sportsday import views
 urlpatterns = [
     url(r'^$', views.home_page, name='home_page'),
     url(r'^sportsday/activities/$', views.activities, name='activities'),
+    url(r'^sportsday/like/$', views.like_activity, name='like_activity'),
     url(r'^sportsday/matches/$', views.matches, name='matches'),
     url(r'^sportsday/create_match/$', views.create_match, name='create_match'),
     url(r'^sportsday/register/$', views.register, name='register'),
