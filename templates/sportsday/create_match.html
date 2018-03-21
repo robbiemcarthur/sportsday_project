@@ -14,6 +14,7 @@
 {% endblock header_block %}
 
 {% block body_block %}
+{% if user.is_authenticated %}
 <form id = "user_form" method="post" action="{% url 'create_match' %}"
 	enctype="multipart/form-data">
 
@@ -24,4 +25,7 @@
 
  <!-- Provide a button to click to submit the form. -->
  <input type="submit" name="submit" value="Create Match" />
+{% else %}
+<p>Please Register in order to create a match</p>
+{% endif %}
 {% endblock %}
