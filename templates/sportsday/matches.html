@@ -2,6 +2,7 @@
 {% load staticfiles %}
 
 {% block body_block %}
+{% block head %}
       <div class="row mb-2 align-center">
         <div class="col-md-12" align="center">
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
@@ -11,4 +12,33 @@
         </div>
       </div>
     </div>
-{% endblock %}
+{% endblock head %}
+{% block content %}
+<div>
+          <div class="row mb-2 align-center">
+        <div class="col-md-12" align="center">
+    {% if matches %}
+    {% for matches in matches %}
+            <ul><strong>{{ matches.activity }}</strong></ul>
+            <ul><strong>{{ matches.url }}</strong></ul>
+            <ul><strong>{{ matches.postcode }}</strong></ul>
+            <ul><strong>{{ matches.ability }}</strong></ul>
+            <ul><strong>{{ matches.available_day }}</strong></ul>
+            <ul><strong>{{ matches.available_time }}</strong></ul>
+            <ul><strong>{{ matches.players }}</strong></ul>
+    <div>
+        <strong id="view_count">{{ matches.views }}</strong> people have viewed this match
+        <button id = "views" data-actid="{{matches.id}}"
+                class="btn btn-primary btn-sm" type="button">
+            Click to View
+        </button>
+    </div>
+    {% endfor %}
+    {% else %}
+    Activity does not exist!
+    {% endif %}
+        </div>
+          </div>
+</div>
+{% endblock content %}
+{% endblock body_block %}
