@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^$', views.home_page, name='home_page'),
     url(r'^sportsday/activities/$', views.activities, name='activities'),
     url(r'^sportsday/matches/$', views.matches, name='matches'),
+    url(r'^sportsday/create_match/$', views.create_match, name='create_match'),
     url(r'^sportsday/register/$', views.register, name='register'),
     url(r'^sportsday/messages/$', views.messages, name='messages'),
     url(r'^sportsday/contact/$', views.contact, name='contact'),

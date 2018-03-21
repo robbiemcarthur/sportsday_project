@@ -2,6 +2,7 @@
 {% load staticfiles %}
 
 {% block body_block %}
+{% block title_block %}
       <div class="row mb-2 align-center">
         <div class="col-md-12" align="center">
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
@@ -11,4 +12,24 @@
         </div>
       </div>
     </div>
-{% endblock %}
+{% endblock title_block %}
+{% block content %}
+{% if registered %}
+	<b>Thank you for registering!</b>
+{% else %}
+	<b>Register here</b>
+	<form id = "user_form" method="post" action="{% url 'register' %}"
+	enctype="multipart/form-data">
+
+	{% csrf_token %}
+
+<!-- Display each form -->
+ {{ user_form.as_p }}
+ {{ profile_form.as_p }}
+
+ <!-- Provide a button to click to submit the form. -->
+ <input type="submit" name="submit" value="Register" />
+ </form>
+{% endif %}
+{% endblock content %}
+{% endblock body_block %}

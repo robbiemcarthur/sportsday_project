@@ -2,29 +2,31 @@
 {% load staticfiles %}
 
 {% block body_block %}
+{% block head %}
       <div class="row mb-2 align-center">
         <div class="col-md-12" align="center">
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
             <div class="card-body d-flex flex-column align-items-start">
               <strong class="d-inline-block mb-2 text-info">Available Activities</strong>
-                {% block content %}
-                <div>
-                    {% if activity %}
-                        <h1>{{ activity.name }}</h1>
-                    <div>
-                        <strong id="like_count">{{ activity.likes }}</strong> people like this activity
-                        <button id = "likes" data-actid="{{activity.id}}"
-                                class="btn btn-primary btn-sm" type="button">
-                            Like
-                        </button>
-                    </div>
-                    {% else %}
-                    Activity does not exist!
-                    {% endif %}
-                </div>
-                {% endblock %}
             </div>
         </div>
       </div>
     </div>
-{% endblock %}
+{% endblock head %}
+{% block content %}
+<div>
+    {% if activity %}
+    <h1>{{ activity.name }}</h1>
+    <div>
+        <strong id="like_count">{{ activity.likes }}</strong> people like this activity
+        <button id = "likes" data-actid="{{activity.id}}"
+                class="btn btn-primary btn-sm" type="button">
+            Like
+        </button>
+    </div>
+    {% else %}
+    Activity does not exist!
+    {% endif %}
+</div>
+{% endblock content %}
+{% endblock body_block %}
