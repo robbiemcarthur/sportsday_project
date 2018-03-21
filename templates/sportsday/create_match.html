@@ -12,7 +12,7 @@
       </div>
     </div>
 {% endblock header_block %}
-
+{% if user
 {% block body_block %}
 <form id = "user_form" method="post" action="{% url 'create_match' %}"
 	enctype="multipart/form-data">
