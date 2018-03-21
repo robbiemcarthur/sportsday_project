@@ -2,7 +2,11 @@
 {% load staticfiles %}
 
 {% block body_block %}
+<<<<<<< HEAD
 {% block title_block %}
+=======
+{% if user.is_authenticated %}
+>>>>>>> 75b77f077720521626d41b452b78369617920736
       <div class="row mb-2 align-center">
         <div class="col-md-12" align="center">
           <div class="card flex-md-row mb-4 box-shadow h-md-250">
@@ -12,6 +16,7 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
 {% endblock title_block %}
 {% block content %}
       <div class="row mb-2 align-center">
@@ -25,3 +30,9 @@
       </div>
 {% endblock content %}
 {% endblock body_block %}
+=======
+{% else %}
+<p>Please log in to view messages</p>
+{% endif %}
+{% endblock %}
+>>>>>>> 75b77f077720521626d41b452b78369617920736
