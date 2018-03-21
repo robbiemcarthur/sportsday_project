@@ -17,16 +17,19 @@
           <div class="card flex-md-row mb-4 box-shadow">
             <div class="card-body d-flex flex-column align-items-start">
               <strong class="d-inline-block mb-2 text-info">Login</strong>
-              <p class="card-text mb-auto text-info text-dark">Username</p>
-              <p class="card-text mb-auto text-info text-dark">Password</p>
-              <p class="card-text mb-auto text-info">Not a member? <a href="#">Click here</a> to register</p>
+              {% if user.is_authenticated %}
+              <p><a href="{% url 'logout' %}">Log Out</p>
+              {% else %}
+              <p><a href="{% url 'login' %}">Login</p>
+              <p class="card-text mb-auto text-info">Not a member? <a href="{% url 'register' %}">Click here</a> to register</p>
+              {% endif %}
               <br>
                <button class="loginBtn loginBtn--facebook">
-                Login
+                <a href="{% url 'register' %}">Login</a></p>
                </button>
 
                 <button class="loginBtn loginBtn--google">
-                Login
+                <a href="{% url 'register' %}">Login</a></p>
                 </button>
             </div>
                </div>
