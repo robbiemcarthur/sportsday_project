@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from sportsday.models import Activity, Match
-from sportsday.forms import UserForm, UserProfileForm
+from sportsday.forms import UserForm, UserProfileForm, MatchForm
 
 def home_page(request):
     context_dict = {'boldmessage': "Welcome to SportsDay!"}
@@ -16,7 +16,14 @@ def matches(request):
     return render(request, 'sportsday/matches.html')
 
 def create_match(request):
-    return render(request, 'sportsday/create_match.html')
+    if request.method == 'POST':
+        match_form = MatchForm(data=request.POST)
+        match = match_form.save()
+        match.save()
+    else:
+        match_form = MatchForm()
+
+    return render(request, 'sportsday/create_match.html', {'match_form': match_form})
 
 def register(request):
     registered = False

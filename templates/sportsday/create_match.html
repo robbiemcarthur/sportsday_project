@@ -14,30 +14,14 @@
 {% endblock header_block %}
 
 {% block body_block %}
-		<form action="/my-handling-form-page" method="post">
-			<div>
-                <label for="name">Match Activity:</label>
-				<input type="text" id="name" name="activity_name" required>
-			</div>
-			<div>
-				<label for="msg">Match Description:</label>
-				<textarea id="msg" name="user_message"></textarea>
-			</div>
-			<div>
-				<label for="name">Location:</label>
-				<input type="text" id="locationname" name="location" required>
-			</div>
-			<div>
-				<label for="datetime">Date and Time:</label>
-				<input type="datetime-local" name="datetime" id="datetime" required>
+<form id = "user_form" method="post" action="{% url 'create_match' %}"
+	enctype="multipart/form-data">
 
-			</div>
+	{% csrf_token %}
 
+<!-- Display each form -->
+ {{ match_form.as_p }}
 
-			<div class="button">
-				<button type="submit">Create Match</button>
-			</div>
-
-		</form>
-
+ <!-- Provide a button to click to submit the form. -->
+ <input type="submit" name="submit" value="Create Match" />
 {% endblock %}
