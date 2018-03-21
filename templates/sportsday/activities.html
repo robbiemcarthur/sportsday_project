@@ -15,18 +15,24 @@
 {% endblock head %}
 {% block content %}
 <div>
-    {% if activity %}
-    <h1>{{ activity.name }}</h1>
+          <div class="row mb-2 align-center">
+        <div class="col-md-12" align="center">
+    {% if activities %}
+    {% for activities in activities %}
+            <li><strong>{{ activities.name }}</strong></li>
     <div>
-        <strong id="like_count">{{ activity.likes }}</strong> people like this activity
+        <strong id="like_count">{{ activities.likes }}</strong> people like this activity
         <button id = "likes" data-actid="{{activity.id}}"
                 class="btn btn-primary btn-sm" type="button">
             Like
         </button>
     </div>
+    {% endfor %}
     {% else %}
     Activity does not exist!
     {% endif %}
+        </div>
+          </div>
 </div>
 {% endblock content %}
 {% endblock body_block %}

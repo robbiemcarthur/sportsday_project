@@ -8,7 +8,7 @@ def home_page(request):
     return render(request, 'sportsday/home_page.html', context=context_dict)
 
 def activities(request):
-    activity_list = Activity.objects.order_by('-likes')
+    activity_list = Activity.objects.all()
     context_dict = {'activities': activity_list}
     return render(request, 'sportsday/activities.html', context_dict)
 
